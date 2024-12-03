@@ -15,7 +15,7 @@ st.title("Career Bot")
 
 # Initialize chat history
 if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "assistant", "content": "Hello! \n Welcome to Career Bot. How can I assist you today?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "Hello! Welcome to Career Bot. How can I assist you today?"}]
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:

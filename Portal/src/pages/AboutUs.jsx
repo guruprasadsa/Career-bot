@@ -7,7 +7,7 @@ import Facebook from "../assets/images/AboutUs_Facebook.png"
 import Team1 from "../assets/images/AboutUs_Team1.jpeg"
 import Team2 from "../assets/images/AboutUs_Team2.jpeg"
 import Team3 from "../assets/images/AboutUs_Team3.jpeg"
-import Team4 from "../assets/images/AboutUs_Team4.jpeg"
+
 
 export default function AboutUs(){
     return (

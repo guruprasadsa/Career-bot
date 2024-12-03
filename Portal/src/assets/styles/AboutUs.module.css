@@ -49,10 +49,15 @@
 
 /* Team Cards */
 
+.row {
+    
+}
 .cardsContainer {
    width: 80%;
    margin-bottom: 30px;
    font-family: var(--fontHeading);
+   display: flex;
+   justify-content: center;
 }
 
 .cardsContainer .teamCards {

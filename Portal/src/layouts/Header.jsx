@@ -52,7 +52,7 @@ export default function Header(){
             <div className="container-fluid d-flex flex-column">
                 <div className="container-fluid d-flex align-items-center justify-content-center">
                     <Link className={`${HeaderCSS.navbarBrand} navbar-brand`} to=".">
-                        <h1 className={`${HeaderCSS.logoHeading} mt-2`}> ▂▃▅▇█▓▒░ Career Quest ░▒▓█▇▅▃▂</h1>
+                        <h1 className={`${HeaderCSS.logoHeading} mt-2`}>Career Quest</h1>
                     </Link>
                     <button className={` ${HeaderCSS.navbbarToggler} navbar-toggler ms-auto`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,20 +65,8 @@ export default function Header(){
                         <li className={`${HeaderCSS.navItem} nav-item`}>
                             <Link to="." className={`${HeaderCSS.navLink} nav-link`}  >Home</Link>
                         </li>
-                        <li className={`${HeaderCSS.navItem} nav-item`}>
-                            <Link to="askCounsellor" className={`${HeaderCSS.navLink} nav-link`}  >Ask Counsellor</Link>
-                        </li>
-                        <li className={`${HeaderCSS.navItem} nav-item`}>
-                            <Link to="OfferCounselling" className={`${HeaderCSS.navLink} nav-link`}
-                            onClick={(event)=>{
-                                dispatch(handleModelChange())
-                                dispatch(resetCount())
-                                dispatch(ErrorMsg({
-                                    msg:''
-                                }))
-                            }}
-                            >Offer Counselling</Link>
-                        </li>
+                        
+                        
                         <li className={`${HeaderCSS.navItem} nav-item`}>
                             <Link className={`${HeaderCSS.navLink} nav-link`}  to="about">About Us</Link>
                         </li>
@@ -90,24 +78,7 @@ export default function Header(){
                         </li>
                           {/* Bell icon at the end */}
                     
-                          <Link 
-                            className={HeaderCSS.links} 
-                            id="notification-button"
-                            aria-controls={notificationOpen ? 'notification-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={notificationOpen ? 'true' : undefined}
-                            onClick={handleNotification}
-                        >
-                            
-                            {notificationData && notificationData.length > 0 && notificationData[0].total_unread_message_count > 0 && (
-                                <span className={HeaderCSS.notificationCount}>
-                                    {notificationData[0].total_unread_message_count}
-                                </span>
-                            )}
-                            <span>
-                                <i className={`${HeaderCSS.bellIcon} fa-solid fa-bell`}></i>
-                            </span>
-                        </Link>
+                          
                     <Menu
                         id="notification-menu"
                         aria-labelledby="notification-button"

@@ -44,7 +44,7 @@ export default function Hero(){
                         </div>       
                         <h1 className={`card-title ${HeroCSS.cardTitle} mt-4`}>Career Quest</h1>
                         <p className={`card-text ${HeroCSS.cardText}`}>Career Quest is transforming career counseling, empowering youth and students to make informed decisions about their future by leveraging personalized insights.</p>
-                        <Link to="http://localhost:8501" className={`btn  ${HeroCSS.chatButton}`}>Chat with CareerGPT <span><img src={robot} className={`${HeroCSS.robot}  mb-2`}  /></span></Link>
+                        <Link to="http://localhost:8501" className={`btn  ${HeroCSS.chatButton}`}>Chat with Career Bot <span><img src={robot} className={`${HeroCSS.robot}  mb-2`}  /></span></Link>
                         
                     </div>
                     </div>

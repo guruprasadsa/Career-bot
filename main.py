@@ -15,7 +15,7 @@ st.title("Career Bot")
 
 # Initialize chat history
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = [{"role": "assistant", "content": "Hello! \n Welcome to Career Bot. How can I assist you today?"}]
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
@@ -23,7 +23,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Accept user input
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input("Enter your Query"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in chat message container

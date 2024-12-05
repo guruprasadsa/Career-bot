@@ -3,6 +3,17 @@ import random
 import time
 import backend
 
+# Ensure session state is initialized
+if 'current_page' not in st.session_state:
+    st.session_state.current_page = 'chat'
+
+# Function to navigate back
+def go_back():
+    st.session_state.current_page = 'home'  # Replace 'home' with your target page
+
+# Add Back Button
+if st.button("Back"):
+    go_back()
 # Streamed response emulator
 def response_generator(prompt):
     response = backend.GenerateResponse(prompt)

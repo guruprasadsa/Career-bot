@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8bu81l(qn0iu6%!v!a3x14o=c3^)4sg5p=pl*@9**x%_xz9+&t'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-8bu81l(qn0iu6%!v!a3x14o=c3^)4sg5p=pl*@9**x%_xz9+&t')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = ['*']
 
@@ -138,10 +143,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'BotGuidedPathways@gmail.com'
-EMAIL_HOST_PASSWORD = 'jpozjwkohygndsxj'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'your-email@gmail.com')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'your-app-password')
 
 
-SEND_BIRD_APP_ID = '70C4C4CC-A6BE-45C2-9263-21D45ECAFFE0'
-SEND_BIRD_API_TOKEN = 'a3b8b5d1ea55c1e6c7b174b5a4e3d09435344791'
+SEND_BIRD_APP_ID = os.getenv('SEND_BIRD_APP_ID', 'your-sendbird-app-id')
+SEND_BIRD_API_TOKEN = os.getenv('SEND_BIRD_API_TOKEN', 'your-sendbird-api-token')
 

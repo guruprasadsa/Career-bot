@@ -36,9 +36,10 @@ export default function CustomizedApp() {
     });
   if(currentChannelUrl)
   {
-    const applicationId = '70C4C4CC-A6BE-45C2-9263-21D45ECAFFE0';
+    // Note: These should be moved to environment variables in production
+    const applicationId = import.meta.env.VITE_SENDBIRD_APP_ID || '70C4C4CC-A6BE-45C2-9263-21D45ECAFFE0';
         
-        const apiToken = 'a3b8b5d1ea55c1e6c7b174b5a4e3d09435344791';
+        const apiToken = import.meta.env.VITE_SENDBIRD_API_TOKEN || 'a3b8b5d1ea55c1e6c7b174b5a4e3d09435344791';
 
         const url = `https://api-${applicationId}.sendbird.com/v3/users/${user_id}/unread_channel_count`;
 

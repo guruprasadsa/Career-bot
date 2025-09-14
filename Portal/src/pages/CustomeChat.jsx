@@ -42,9 +42,10 @@ export default function CustomizedApp(props) {
   };
   if(currentChannelUrl)
   {
-    const applicationId = '70C4C4CC-A6BE-45C2-9263-21D45ECAFFE0';
+    // Note: These should be moved to environment variables in production
+    const applicationId = import.meta.env.VITE_SENDBIRD_APP_ID || '70C4C4CC-A6BE-45C2-9263-21D45ECAFFE0';
         
-        const apiToken = 'a3b8b5d1ea55c1e6c7b174b5a4e3d09435344791';
+        const apiToken = import.meta.env.VITE_SENDBIRD_API_TOKEN || 'a3b8b5d1ea55c1e6c7b174b5a4e3d09435344791';
 
         const url = `https://api-${applicationId}.sendbird.com/v3/users/${user_id}/unread_channel_count`;
 
@@ -58,12 +59,12 @@ export default function CustomizedApp(props) {
                         .then(response => response.json())
                         .then(data => {
                           const updatedNotificationData = [...notificationData]; // Copying the array
-                          console.log("copy data", updatedNotificationData)
+                          // console.log("copy data", updatedNotificationData)
                             updatedNotificationData[0] = {
                                 ...updatedNotificationData[0], // Copying the object
                                 total_unread_message_count: data.unread_count // Updating the value
                             };
-                            console.log("Updated Notification in user side", updatedNotificationData);
+                            // console.log("Updated Notification in user side", updatedNotificationData);
                             dispatch(setNotificationData({ data: updatedNotificationData }));
                             //console.log('Unread channel count:', data.unread_count);
                            

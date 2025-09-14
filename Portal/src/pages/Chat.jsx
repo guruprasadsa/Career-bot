@@ -8,7 +8,7 @@ import CustomizedApp from './CustomeChat'; // Assuming a correct file name
 
 export default function Chat() {
   const {user_id} = useSelector((store) => store.authentication)
-  console.log("Chat Component", user_id)
+  // console.log("Chat Component", user_id)
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const channel_url = params.get('channelUrl');
